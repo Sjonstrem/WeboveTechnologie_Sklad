@@ -1,0 +1,13 @@
+@(meno: String,pozicia: String)
+<div class="hlavneMenu">
+<h2 class="otvorenaKarta"> @meno</h2>
+<ul class="listTl">
+<li class="rychleTlac"><a class="format" href="@routes.Projects.sklad(meno,pozicia)">Sklad</a></li>
+<li class="rychleTlac"><a class="format" href="@routes.Projects.vydat(meno,pozicia)">Vyskladnit tovar</a></li>
+<li class="rychleTlac"><a class="format" href="@routes.Projects.priat(meno,pozicia)">Prijat tovar</a></li>
+@if(pozicia=="veduci skladu"){
+<li class="rychleTlac"><a class="format" href="@routes.Projects.objednavka(meno,pozicia)">Objednavky</a></li>
+}
+</ul>
+
+</div>

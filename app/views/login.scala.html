@@ -1,0 +1,43 @@
+@(form: Form[Application.Login])
+
+<html>
+    <head>
+        <title>Prihlasovanie</title>
+     <!--   <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">-->
+     <!--    <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/login.css")"> -->
+    </head>
+    <body>
+    <div style="height: 20%"><h1 style="position:relative; left:40%; down:80%">Prihlasenie</h1></div>
+    <div style="background-color:#B8B8B8; padding: 10px; position:relative; left:40%;height-min:150px;width:200px;">
+        @helper.form(routes.Application.authenticate) {
+            
+            
+            @if(form.hasGlobalErrors) { 
+                <p class="error">
+                    @form.globalError.message
+                </p>
+            }
+            
+            @if(flash.contains("success")) {
+                <p class="success">
+                    @flash.get("success")
+                </p>
+            }
+            
+            <p>
+                <input type="email" name="email" placeholder="Email" value="@form("email").value">
+            </p>
+            <p>
+                <input type="password" name="password" placeholder="Password">
+            </p>
+            <p>
+                <button type="submit">Prihlas</button>
+            </p>
+            
+        }
+        </div>
+    </body>
+</html>
+    
+
+

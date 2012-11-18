@@ -1,0 +1,39 @@
+@(meno: String,pozicia:String)(body: Html)
+<!--  (meno: String,pozicia:String,list:List[String])-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/vrchnaLista.css")">
+<link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/vrchneMenu.css")">
+<link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/uvodnyVyber.css")">
+<title>Aplikacia</title>
+</head>
+
+<body>
+<div class="vrchnyPanel">
+<h2 class="logo"> Skladový manažment</h2>
+<ul class="listHorneTlac">
+@if(pozicia == "veduci skladu"){
+<li class="horneTlac"><a class="formatoff" href="www.tuke.sk">Použivatelia</a></li>
+}else{
+<li class="horneTlac" style="visibility:hidden;"><a class="formatoff" href="www.tuke.sk">Použivatelia</a></li>
+}
+<li class="horneTlac"><a class="formatoff" href="www.tuke.sk">Odhlasiť</a><li>
+</ul>
+<div class="userInfo">
+<ul class="textUserInfo">
+<li>Použivateľ: @meno</li>
+<li>Pozícia: @pozicia<li>
+<li>Čas prihlasenia: 15.00.25<li>
+</ul>
+</div>
+</div>
+@body
+<!--views.html.menu("Sklad")-->
+<!--views.html.uvodnyVyber(list)-->
+
+</body>
+
+
+
